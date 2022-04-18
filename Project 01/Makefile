@@ -7,7 +7,7 @@ PYTHON ?= python # python3 py
 
 # Print out colored action message
 MESSAGE = printf "\033[32;01m---> $(1)\033[0m\n"
-export PYTHONPATH = pig
+export PYTHONPATH = game
 
 all:
 
@@ -66,7 +66,7 @@ pylint:
 
 flake8:
 	@$(call MESSAGE,$@)
-	-flake8 pig --ignore=H601
+	-flake8 game --ignore=H601
 
 lint: flake8 pylint
 
@@ -76,7 +76,7 @@ lint: flake8 pylint
 #
 black:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m black pig/ test/
+	 $(PYTHON) -m black game/ test/
 
 codestyle: black
 
@@ -104,7 +104,7 @@ test: lint coverage
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/api pig/*.py
+	pdoc --force --html --output-dir doc/api game/*.py
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/uml
@@ -121,23 +121,23 @@ doc: pdoc pyreverse
 #
 radon-cc:
 	@$(call MESSAGE,$@)
-	radon cc --show-complexity --average pig
+	radon cc --show-complexity --average game
 
 radon-mi:
 	@$(call MESSAGE,$@)
-	radon mi --show pig
+	radon mi --show game
 
 radon-raw:
 	@$(call MESSAGE,$@)
-	radon raw pig
+	radon raw game
 
 radon-hal:
 	@$(call MESSAGE,$@)
-	radon hal pig
+	radon hal game
 
 cohesion:
 	@$(call MESSAGE,$@)
-	cohesion --directory pig
+	cohesion --directory game
 
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 
@@ -148,4 +148,4 @@ metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 #
 bandit:
 	@$(call MESSAGE,$@)
-	bandit --recursive pig
+	bandit --recursive game
