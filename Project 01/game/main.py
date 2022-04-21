@@ -7,7 +7,7 @@ WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 600
 
 page = Tk()
-page.title('Cool mind - We are here to help')
+page.title('Game - Homeless')
 
 page.geometry(str(WINDOW_WIDTH) + "x" + str(WINDOW_HEIGHT))
 
