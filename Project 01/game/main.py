@@ -13,7 +13,8 @@ page.geometry(str(WINDOW_WIDTH) + "x" + str(WINDOW_HEIGHT))
 
 path = "../Assets/purplelight.jpeg"
 
-img = ImageTk.PhotoImage(Image.open(path))
+dirname = os.path.dirname(__file__)
+img = ImageTk.PhotoImage(Image.open(os.path.join(dirname, path)))
 #page.configure(background='')
 
 background_label = Label(page, image=img)
