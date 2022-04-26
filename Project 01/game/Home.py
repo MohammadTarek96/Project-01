@@ -20,6 +20,6 @@ class Home(Frame):
         btnAbout = Button(self, text="About Game", bg='black', fg='white', font = self.controller.font, command= lambda: self.controller.showFrame('About'))
         btnAbout.place(relx=0.5, rely=0.45, width=150, height = 50, anchor=CENTER)
 
-        btnDonate = Button(self, text="Donate", bg='black', fg='white', font = self.controller.font)
+        btnDonate = Button(self, text="Donate", bg='black', fg='white', font = self.controller.font, command= lambda: self.controller.showFrame('Donate'))
         btnDonate.place(relx=0.5, rely=0.6, width=150, height = 50, anchor=CENTER)
         
