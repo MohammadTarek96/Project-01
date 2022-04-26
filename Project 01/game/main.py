@@ -1,37 +1,38 @@
 from tkinter import *
 import os
-from PIL import ImageTk, Image
 import tkinter.font as font
 
-WINDOW_WIDTH = 400
-WINDOW_HEIGHT = 600
+from Home import Home
+from About import About
+from Start import Start
 
-page = Tk()
-page.title('Game - Homeless')
+class Main(Tk):
+    def __init__(self, *args, **kwargs):
+        Tk.__init__(self, *args, **kwargs)
+        self.WINDOW_WIDTH = 400
+        self.WINDOW_HEIGHT = 600
 
-page.geometry(str(WINDOW_WIDTH) + "x" + str(WINDOW_HEIGHT))
+        self.title('Game - Homeless')
+        self.geometry(str(self.WINDOW_WIDTH) + "x" + str(self.WINDOW_HEIGHT))
 
-path = "../Assets/purplelight.jpeg"
+        self.dirname = os.path.dirname(__file__)
+        self.font = font.Font(size = 12, weight="bold")
 
-dirname = os.path.dirname(__file__)
-img = ImageTk.PhotoImage(Image.open(os.path.join(dirname, path)))
-#page.configure(background='')
+        self.container = Frame(self)
+        self.container.pack(side="top", fill="both", expand=True)
+        self.container.grid_rowconfigure(0, weight=1)
+        self.container.grid_columnconfigure(0, weight=1)
 
-background_label = Label(page, image=img)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
+        self.frames = {}
+        for frame in (Home, About, Start):    
+            f = frame(self.container, self)
+            f.grid(row=0, column=0, sticky="nsew")
+            self.frames[frame.__name__] = f
 
-myfont = font.Font(size = 12, weight="bold")
+        self.showFrame('Home')
+        self.mainloop()
+    
+    def showFrame(self, frame):
+        self.frames[frame].tkraise()
 
-btnStart = Button(page, text="Start", bg='black', fg='white', font=myfont)
-btnStart.place(relx=0.5, rely=0.3, width=150, height = 50, anchor=CENTER)
- 
-btnAbout = Button(page, text="About Game", bg='black', fg='white', font = myfont)
-btnAbout.place(relx=0.5, rely=0.45, width=150, height = 50, anchor=CENTER)
-
-btnDonate = Button(page, text="Donate", bg='black', fg='white', font = myfont)
-btnDonate.place(relx=0.5, rely=0.6, width=150, height = 50, anchor=CENTER)
-
-page.mainloop()
-
-userName = Label(page, text = "Enter your first name")
-userName.pack()
+main = Main()
