@@ -20,9 +20,12 @@ class Donate(Frame):
         text3 = Label(self, text="Please help them by donating to National Alliance to End Homelessness", bg='black',
                       fg='white')
         text.place(x=20, y=80)
-        text2.place(x=20, y=100)
-        text3.place(x=20, y=120)
+        text.config(font=('Sail bold',20))
+        text2.place(x=30, y=120)
+        text2.config(font=('Sail bold',20))
+        text3.place(x=40, y=160)
+        text3.config(font=('Sail bold',20))
 
         btn_about = Button(self, text="Go Back", bg='black', fg='white',
                            command=lambda: self.controller.show_frame('Home'))
-        btn_about.place(relx=0.5, rely=0.3, width=150, height=50, anchor=CENTER)
+        btn_about.place(width=150, height=50, x=250,y=400)

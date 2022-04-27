@@ -11,8 +11,8 @@ from Donate import Donate
 class Main(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
-        self.WINDOW_WIDTH = 600
-        self.WINDOW_HEIGHT = 600
+        self.WINDOW_WIDTH = 700
+        self.WINDOW_HEIGHT = 700
 
         self.title('Game - Homeless')
         self.geometry(str(self.WINDOW_WIDTH) + "x" + str(self.WINDOW_HEIGHT))
