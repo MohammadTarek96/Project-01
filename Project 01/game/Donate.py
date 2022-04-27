@@ -15,5 +15,5 @@ class Donate(Frame):
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         btn_about = Button(self, text="Go Back", bg='black', fg='white',
-                           command=lambda: self.controller.showFrame('Home'))
+                           command=lambda: self.controller.show_frame('Home'))
         btn_about.place(relx=0.5, rely=0.3, width=150, height=50, anchor=CENTER)
