@@ -7,6 +7,7 @@ from About import About
 from Start import Start
 from Donate import Donate
 
+
 class Main(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
@@ -17,7 +18,7 @@ class Main(Tk):
         self.geometry(str(self.WINDOW_WIDTH) + "x" + str(self.WINDOW_HEIGHT))
 
         self.dirname = os.path.dirname(__file__)
-        self.font = font.Font(size = 12, weight="bold")
+        self.font = font.Font(size=12, weight="bold")
 
         self.container = Frame(self)
         self.container.pack(side="top", fill="both", expand=True)
@@ -25,15 +26,16 @@ class Main(Tk):
         self.container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for frame in (Home, About, Start, Donate):    
+        for frame in (Home, About, Start, Donate):
             f = frame(self.container, self)
             f.grid(row=0, column=0, sticky="nsew")
             self.frames[frame.__name__] = f
 
         self.showFrame('Home')
         self.mainloop()
-    
-    def showFrame(self, frame):
+
+    def show_frame(self, frame):
         self.frames[frame].tkraise()
+
 
 main = Main()

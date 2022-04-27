@@ -1,7 +1,7 @@
-
 from tkinter import *
 from PIL import ImageTk, Image
 import os
+
 
 class Start(Frame):
     def __init__(self, parent, controller):
@@ -14,5 +14,6 @@ class Start(Frame):
         background_label = Label(self, image=self.img)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        btnStart = Button(self, text="Go Back", bg='black', fg='white', command = lambda: self.controller.showFrame('Home'))
-        btnStart.place(relx=0.5, rely=0.3, width=150, height = 50, anchor=CENTER)
+        btn_start = Button(self, text="Go Back", bg='black', fg='white',
+                           command=lambda: self.controller.showFrame('Home'))
+        btn_start.place(relx=0.5, rely=0.3, width=150, height=50, anchor=CENTER)
