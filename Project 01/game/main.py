@@ -31,7 +31,7 @@ class Main(Tk):
             f.grid(row=0, column=0, sticky="nsew")
             self.frames[frame.__name__] = f
 
-        self.showFrame('Home')
+        self.show_frame('Home')
         self.mainloop()
 
     def show_frame(self, frame):
