@@ -28,4 +28,4 @@ class Donate(Frame):
 
         btn_about = Button(self, text="Go Back", bg='black', fg='white',
                            command=lambda: self.controller.show_frame('Home'))
-        btn_about.place(width=150, height=50, x=250,y=400)
+        btn_about.place(relx=0.5, rely=0.6, width=150, height=50, anchor=CENTER)

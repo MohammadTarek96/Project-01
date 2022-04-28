@@ -29,8 +29,8 @@ class Start(Frame):
         self.btn_man_bg = ImageTk.PhotoImage(Image.open(os.path.join(self.controller.dirname, '../Assets/homeless-man.jpg')))
         img_label= Label(image=self.btn_man_bg)
 
-        btn_male   = Button(self, image=self.btn_man_bg,   command=lambda: self.controller.show_frame('Home'))
-        btn_female = Button(self, image=self.btn_woman_bg, command=lambda: self.controller.show_frame('Home'))
+        btn_male   = Button(self, image=self.btn_man_bg)
+        btn_female = Button(self, image=self.btn_woman_bg)
         btn_back   = Button(self, text="Go Back", bg='black', fg='white', command=lambda: self.controller.show_frame('Home'))
 
         btn_male.place(  relx=0.75, rely=0.35, width=256, height=256, anchor=CENTER)
