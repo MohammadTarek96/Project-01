@@ -27,5 +27,5 @@ class Ph2f3(Frame):
         text.place(relx=0.5, rely=0.3, anchor=CENTER)
 
         btn1_frame2 = Button(self, text="Next", bg='white', fg='black', font=self.controller.font,
-                             command=lambda: self.controller.show_frame('Ph3f1'))
+                             command=lambda: self.controller.show_frame('Home'))
         btn1_frame2.place(relx=0.5, rely=0.5, width=150, height=50, anchor=CENTER)
