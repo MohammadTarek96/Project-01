@@ -1,8 +1,8 @@
 from tkinter import *
-import tkinter.font as tkfont
 from PIL import ImageTk, Image
 import os
 import textwrap
+import tkinter.font as tkfont
 
 
 class Start(Frame):
@@ -59,3 +59,7 @@ class Start(Frame):
         text_male = Label(self, width=50, text=text_male)
         text_male.configure(font=font)
         text_male.place(relx=0.75, rely=0.6, anchor=CENTER)
+
+        btn_ph2f1 = Button(self, text="Story", bg='black', fg='white', font=self.controller.font,
+                           command=lambda: self.controller.show_frame('Ph1f1'))
+        btn_ph2f1.place(relx=0.5, rely=0.6, width=150, height=50, anchor=CENTER)

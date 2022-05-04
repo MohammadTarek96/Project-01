@@ -15,25 +15,27 @@ class About(Frame):
         background_label = Label(self, image=self.img)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
         titleAboutGame = Label(self,
-                              text="What you need to know the game",
-                              bg='black',
-                              fg='white')
+                               text="What you need to know the game",
+                               bg='black',
+                               fg='white')
         titleGameFont = tkfont.Font(family="Comic Sans MS", size=20, weight="bold")  # slant="italic"
         titleAboutGame.configure(font=titleGameFont)
         titleAboutGame.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-        textAboutGame = Label(self, text="This game lets the user to experience some problems the homeless people live with on daily basis.\n\n "
-                                         "The user will get TWO choices when the game starts\n "
-                                         "you will be able to read the story of the character you would like to help.\n\n "
-                                         "The main goal would be to get your character back on track and healthy.\n\n", bg='black',
-                     fg='white')
-        aboutGameFont = tkfont.Font(family="Helvetica", size=13, weight="bold" )  # slant="italic"
+        textAboutGame = Label(self,
+                              text="This game lets the user to experience some problems the homeless people live with on daily basis.\n\n "
+                                   "The user will get TWO choices when the game starts\n "
+                                   "you will be able to read the story of the character you would like to help.\n\n "
+                                   "The main goal would be to get your character back on track and healthy.\n\n",
+                              bg='black',
+                              fg='white')
+        aboutGameFont = tkfont.Font(family="Helvetica", size=13, weight="bold")  # slant="italic"
         textAboutGame.configure(font=aboutGameFont)
         textAboutGame.place(relx=0.5, rely=0.3, anchor=CENTER)
 
         textAboutGame2 = Label(self,
-                              text= "We thank you for playing our game!", bg='black',
-                              fg='yellow')
+                               text="We thank you for playing our game!", bg='black',
+                               fg='yellow')
         aboutGameFont2 = tkfont.Font(family="Courier New", size=14, weight="bold")  # slant="italic"
         textAboutGame2.configure(font=aboutGameFont2)
         textAboutGame2.place(relx=0.5, rely=0.383, anchor=CENTER)

@@ -6,6 +6,12 @@ from Home import Home
 from About import About
 from Start import Start
 from Donate import Donate
+from Ph1f1 import Ph1f1
+from Ph1f2 import Ph1f2
+from Ph1f3 import Ph1f3
+from Ph2f1 import Ph2f1
+from Ph2f2 import Ph2f2
+from Ph2f3 import Ph2f3
 
 
 class Main(Tk):
@@ -26,7 +32,9 @@ class Main(Tk):
         self.container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for frame in (Home, About, Start, Donate):
+        for frame in (Home, About, Start, Donate,
+                      Ph1f1, Ph1f2, Ph1f3,
+                      Ph2f1, Ph2f2, Ph2f3):
             f = frame(self.container, self)
             f.grid(row=0, column=0, sticky="nsew")
             self.frames[frame.__name__] = f
